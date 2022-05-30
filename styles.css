@@ -21,27 +21,10 @@ body::-webkit-scrollbar {
   font-weight: bold;
   font-family: monospace;
   letter-spacing: 7px;
-  cursor: pointer
 }
 #lastname{
   color: #5f5f5f;
   font-weight: bold;
   font-family: monospace;
   letter-spacing: 7px;
-  cursor: pointer
-}
-h1 span{
-  transition: .25s linear
-}
-h1:hover span{
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 10px rgb(180, 180, 180),
-                0 0 20px rgb(180, 180, 180), 
-                0 0 40px rgb(180, 180, 180);
-}
-h1:hover span #letter-e{
-  color: rgb(68, 49, 235);
-  text-shadow: 0 0 10px rgb(68, 49, 235),
-                0 0 20px rgb(68, 49, 235), 
-                0 0 40px rgb(68, 49, 235);
 }
