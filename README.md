@@ -1,1 +1,1 @@
-Personal Website of Alexander Meiners
+Personal Website
