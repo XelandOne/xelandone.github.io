@@ -1,3 +1,15 @@
+const firstName = document.getElementById("firstname");
+const lastName = document.getElementById("lastname");
+
+let scrollSpeed = 25;
+let movementSpeed = 30;
+let spaceLeft = 0;
+
+const bd = document.querySelector('body');
+
+document.onmousemove = mouseMove
+//document.onwheel = scrolling;
+
 function scrolling(event) {
     event.preventDefault();
 
@@ -7,19 +19,23 @@ function scrolling(event) {
     // Restrict scale
     spaceLeft = Math.min(Math.max(-2, spaceLeft), 0);
 
-    var scrollSpeed = 25;
 
-    firstName.style.position = 'relative';
+    //firstName.style.position = 'relative';
     firstName.style.right = spaceLeft * scrollSpeed + '%';
 
-    lastName.style.position = 'relative';
+    //lastName.style.position = 'relative';
     lastName.style.left = spaceLeft * scrollSpeed + '%';
 }
 
-document.body.style.overflow = "visible";
-var spaceLeft = 0;
-var bd = document.querySelector('body');
-var firstName = document.getElementById("firstname");
-var lastName = document.getElementById("lastname");
 
-bd.onwheel = scrolling;
+function mouseMove(event) {
+    let relX = event.clientX / bd.getClientRects()[0]['width'];
+    let relY = event.clientY / bd.getClientRects()[0]['height'];
+
+
+    firstName.style.right = relX * movementSpeed + '%';
+    lastName.style.left = relX * movementSpeed + '%';
+
+    firstName.style.top = relY * movementSpeed + '%';
+    lastName.style.bottom = -relY * movementSpeed + '%';
+}
