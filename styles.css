@@ -1,9 +1,9 @@
 
-body{
+body {
     overscroll-behavior: none;
     -ms-overflow-style: none;
     scrollbar-width: none;
-    overflow-y: scroll; 
+    overflow-y: scroll;
 
     padding: 0;
     margin: 0;
@@ -13,18 +13,21 @@ body{
     justify-content: center;
     min-height: 100vh
 }
+
 body::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
-#firstname{
-  color: #333333;
-  font-weight: bold;
-  font-family: monospace;
-  letter-spacing: 7px;
+
+#firstname {
+    color: #333333;
+    font-weight: bold;
+    font-family: monospace;
+    letter-spacing: 7px;
 }
-#lastname{
-  color: #5f5f5f;
-  font-weight: bold;
-  font-family: monospace;
-  letter-spacing: 7px;
+
+#lastname {
+    color: #5f5f5f;
+    font-weight: bold;
+    font-family: monospace;
+    letter-spacing: 7px;
 }
