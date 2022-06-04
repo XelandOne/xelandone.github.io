@@ -3,11 +3,13 @@ const lastName = document.getElementById("lastname");
 
 let scrollSpeed = 25;
 let movementSpeed = 30;
+let blurStrengthFactor = 5;
 let spaceLeft = 0;
 
 const bd = document.querySelector('body');
 
 document.onmousemove = mouseMove
+
 //document.onwheel = scrolling;
 
 /**
@@ -32,8 +34,11 @@ function scrolling(event) {
 
 
 function mouseMove(event) {
-    let relX = event.clientX / bd.getClientRects()[0]['width'];
-    let relY = event.clientY / bd.getClientRects()[0]['height'];
+    let bodyWidth = bd.getClientRects()[0]['width']
+    let bodyHeight = bd.getClientRects()[0]['height']
+
+    let relX = event.clientX / bodyWidth;
+    let relY = event.clientY / bodyHeight;
 
 
     firstName.style.right = relX * movementSpeed + '%';
@@ -41,11 +46,21 @@ function mouseMove(event) {
 
     firstName.style.top = relY * movementSpeed + '%';
     lastName.style.bottom = -relY * movementSpeed + '%';
+
+    let firstNameDistance = getDistanceToPoint(firstName, event.clientX, event.clientY) / (0.5 * (bodyHeight + bodyWidth));
+    let lastNameDistance = getDistanceToPoint(lastName, event.clientX, event.clientY) / (0.5 * (bodyHeight + bodyWidth));
+
+    firstName.style.filter = 'blur(' + Math.log(firstNameDistance + 1) * blurStrengthFactor + 'px)';
+    lastName.style.filter = 'blur(' + Math.log(lastNameDistance + 1) * blurStrengthFactor + 'px)';
 }
 
+const layout = new rive.Layout({
+    fit: rive.Fit.Fill,
+});
 
 new rive.Rive({
-    src: 'background.riv',
+    src: 'assets/background.riv',
     canvas: document.getElementById('canvas'),
+    layout: layout,
     autoplay: true,
 });
