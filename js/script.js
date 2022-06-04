@@ -10,6 +10,9 @@ const bd = document.querySelector('body');
 document.onmousemove = mouseMove
 //document.onwheel = scrolling;
 
+/**
+ * @deprecated Position now uses function mouseMove
+ */
 function scrolling(event) {
     event.preventDefault();
 
@@ -39,3 +42,10 @@ function mouseMove(event) {
     firstName.style.top = relY * movementSpeed + '%';
     lastName.style.bottom = -relY * movementSpeed + '%';
 }
+
+
+new rive.Rive({
+    src: 'background.riv',
+    canvas: document.getElementById('canvas'),
+    autoplay: true,
+});
