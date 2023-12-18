@@ -1,0 +1,118 @@
+body {
+    overscroll-behavior: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    overflow: visible;
+
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Captcha */
+
+#overlay {
+    position: fixed; /* Fixed positioning ensures the element is placed relative to the viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white; /* Semi-transparent black background */
+    z-index: 999; /* High z-index value to place it on top of other content */
+    display: flex; /* Used for centering the captcha box */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.captcha-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+    z-index: 1000;
+}
+
+.captcha-question p {
+    margin-bottom: 30px;
+}
+
+button {
+    border-radius: 8px;
+    color: #333333;
+    background: white;
+    border: 10px #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 12px;
+    text-align: center;
+    vertical-align: baseline;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+
+
+/* Website */
+
+#firstname {
+    color: #333333;
+    font-weight: bold;
+    #font-family: monospace;
+    letter-spacing: 7px;
+    position: relative;
+}
+
+#lastname {
+    color: #5f5f5f;
+    font-weight: bold;
+    #font-family: monospace;
+    letter-spacing: 7px;
+    position: relative;
+}
+
+.link {
+    font-weight: bold;
+    #font-family: monospace;
+    letter-spacing: 7px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    color: black;
+    cursor: pointer;
+}
+
+.link:hover {
+    text-shadow: 0 0 10px #ffffff;
+    text-decoration: underline;
+}
+
+#headline-art {
+    top: 18%;
+    left: 22%;
+}
+
+#headline-photography {
+    top: 80%;
+    left: 52%;
+}
+
+#headline-code {
+    top: 24%;
+    left: 70%;
+}
