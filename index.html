@@ -1,58 +1,83 @@
 <!doctype html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;">
+  <meta charset='utf-8'>
+  <meta name='viewport'
+        content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0;'>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/vnd.microsoft.icon" href="icon.ico">
+  <link
+    href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css'
+    rel='stylesheet'
+    integrity='sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3'
+    crossorigin='anonymous'>
+  <link rel='stylesheet' href='css/index.css'>
+  <link rel='icon' type='image/vnd.microsoft.icon' href='icon.ico'>
 
-    <title>Alexander Meiners</title>
+  <title>Alexander Meiners</title>
 </head>
 <body>
-<canvas id="canvas"></canvas>
-<div class="container">
-    <div class="row">
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
-        <div class="col">
-            <h1 class="display-6" id="firstname"><span>Alexander</span></h1>
-        </div>
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
+<div id='overlay'>
+  <div id='captchaBox' class='captcha-box'>
+    <div id='humanCheck' class='captcha-question'>
+      <p>Are you human?</p>
+      <button onclick='verifyHuman(true)'>Yes</button>
+      <button onclick='verifyHuman(false)'>No</button>
     </div>
-    <div class="row">
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
-        <div class="col">
-            <h1 class="display-1 text-right" id="lastname">Meiners</h1>
-        </div>
-        <div class="col">
-        </div>
-        <div class="col">
-        </div>
+
+    <div id='humaneCheck' class='captcha-question' style='display: none;'>
+      <p>Are you humane?</p>
+      <button onclick='verifyHumane(true)'>Yes</button>
+      <button onclick='verifyHumane(false)'>No</button>
     </div>
+  </div>
 </div>
 
-<script src="https://unpkg.com/@rive-app/canvas@1.0.47"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+<a href='art/humanity.html'><h2 class='link' id='headline-art'>art</h2></a>
+<a href='photography/photography.html'><h2 class='link'
+                                           id='headline-photography'>
+  photography</h2></a>
+<a href='https://github.com/XelandOne'><h2 class='link' id='headline-code'>code</h2></a>
+<div class='container'>
+  <div class='row'>
+    <div class='col'>
+    </div>
+    <div class='col'>
+    </div>
+    <div class='col'>
+      <h1 class='display-6' id='firstname'><span>Alexander</span></h1>
+    </div>
+    <div class='col'>
+    </div>
+    <div class='col'>
+    </div>
+    <div class='col'>
+    </div>
+  </div>
+  <div class='row'>
+    <div class='col'>
+    </div>
+    <div class='col'>
+    </div>
+    <div class='col'>
+    </div>
+    <div class='col'>
+      <h1 class='display-1 text-right' id='lastname'>Meiners</h1>
+    </div>
+    <div class='col'>
+    </div>
+    <div class='col'>
+    </div>
+  </div>
+</div>
 
-<script src="js/utils.js"></script>
-<script src="js/script.js"></script>
+<script
+  src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
+  integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
+  crossorigin='anonymous'></script>
+
+<script src='js/utils.js'></script>
+<script src='js/mouse.js'></script>
+<script src='js/captcha.js'></script>
 
 </body>
 </html>
