@@ -1,4 +1,4 @@
-var images = ["img/FoundationCurch.png", "img/Dom.png", "img/Soccer.png", "img/Train Arrival.png", "img/Train Station.png",  "img/Art Museum Alley.png", "img/Art Museum.png", "img/Parisian Bar.png", "img/Portrait Body Builder.png","img/Alley Life.png", "img/Alley Porsche.png", "img/Grafiti.png", "img/Parisian Cafe.png", "img/Mannequin Reflections.png", "img/Mannequin Face.png", "img/Portrait Waiter.png", "img/Tram Strasbourg.png"]; // your image sources
+var images = ["img/FoundationCurch.webp", "img/Dom.webp", "img/Soccer.webp", "img/Train Arrival.webp", "img/Train Station.webp",  "img/Art Museum Alley.webp", "img/Art Museum.webp", "img/Parisian Bar.webp", "img/Portrait Body Builder.webp","img/Alley Life.webp", "img/Alley Porsche.webp", "img/Grafiti.webp", "img/Parisian Cafe.webp", "img/Mannequin Reflections.webp", "img/Mannequin Face.webp", "img/Portrait Waiter.webp", "img/Tram Strasbourg.webp"]; // your image sources
 var currentImage = 0;
 
 $(document).keydown(function (e) {
