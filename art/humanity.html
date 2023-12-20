@@ -8,7 +8,7 @@
 <body>
 
 <div class="centered-text">
-  How human is...<br>
+  How <span id="entity">human</span> is...<br>
   <br>
   H U M A N I T Y<br>
   ├────┬────┬────┤<br>
@@ -26,5 +26,10 @@
   └─────────────────────┘<br>
 </div>
 
+<script>
+  const options = ["human", "humanoid"];
+  const randomOption = Math.floor(Math.random() * options.length);
+  document.getElementById("entity").innerText = options[randomOption];
+</script>
 </body>
 </html>
