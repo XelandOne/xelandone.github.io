@@ -1,0 +1,13 @@
+.centered-text {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.centered-text h1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: top 4s, left 4s;
+}

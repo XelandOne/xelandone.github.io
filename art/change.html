@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <title>Humanity</title>
+  <link rel='stylesheet' href='change.css'>
+</head>
+<body>
+
+<div class='centered-text'>
+  <h1 id='headline1'>God is Change</h1>
+  <h1 id='headline2'>Change is God</h1>
+</div>
+
+<script>
+  function moveElement(element) {
+    var rect = element.parentElement.getBoundingClientRect()
+    var maxX = rect.width - element.offsetWidth
+    var maxY = rect.height - element.offsetHeight
+
+    var randomX = Math.random() * maxX
+    var randomY = Math.random() * maxY
+
+    element.style.left = randomX + 'px'
+    element.style.top = randomY + 'px'
+  }
+
+  function moveHeadlines() {
+    var headline1 = document.getElementById('headline1')
+    var headline2 = document.getElementById('headline2')
+
+    moveElement(headline1)
+    moveElement(headline2)
+  }
+
+  moveHeadlines()
+  setInterval(moveHeadlines, 4000)
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+html, body {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    white-space: pre;
+    text-align: left;
+}
+
+.centered-text {
+    text-align: left;
+}
+
+h1 {
+    color: black;
+    letter-spacing: 7px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    letter-spacing: 4px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
