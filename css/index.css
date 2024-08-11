@@ -103,16 +103,26 @@ button {
 }
 
 #headline-art {
-    top: 18%;
+    top: 10%;
     left: 22%;
 }
 
 #headline-photography {
-    top: 80%;
-    left: 52%;
+    top: 28%;
+    left: 42%;
 }
 
 #headline-code {
-    top: 24%;
+    top: 18%;
     left: 70%;
+}
+
+#headline-bookstore {
+    top: 74%;
+    left: 40%;
+}
+
+#headline-litkreis {
+    top: 87%;
+    left: 72%;
 }
