@@ -45,6 +45,11 @@ body, html {
   max-width: 80%;
   max-height: 80%;
   border-radius: 23px;
+  transition: filter 0.3s ease;
+}
+
+.blur {
+  filter: blur(10px);
 }
 
 /* Loading spinner */

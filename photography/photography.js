@@ -3,7 +3,7 @@ var currentImage = 0;
 
 // Function to navigate to the next image
 function nextImage() {
-  showLoadingSpinner();
+  applyBlurAndShowSpinner();
   currentImage++;
   if (currentImage >= images.length) {
     currentImage = 0;
@@ -13,7 +13,7 @@ function nextImage() {
 
 // Function to navigate to the previous image
 function prevImage() {
-  showLoadingSpinner();
+  applyBlurAndShowSpinner();
   currentImage--;
   if (currentImage < 0) {
     currentImage = images.length - 1;
@@ -21,14 +21,21 @@ function prevImage() {
   loadImage(images[currentImage]);
 }
 
+// Function to apply blur and show loading spinner
+function applyBlurAndShowSpinner() {
+  $('.myImages').addClass('blur');
+  $('.loading-spinner').show();
+}
+
 // Function to show loading spinner
 function showLoadingSpinner() {
   $('.loading-spinner').show();
 }
 
-// Function to hide loading spinner
+// Function to hide loading spinner and remove blur
 function hideLoadingSpinner() {
   $('.loading-spinner').hide();
+  $('.myImages').removeClass('blur');
 }
 
 // Function to load image with spinner
@@ -36,7 +43,10 @@ function loadImage(src) {
   const img = new Image();
   img.onload = function() {
     $('.myImages').attr('src', src);
-    hideLoadingSpinner();
+    // Short delay to ensure the new image is displayed before removing blur
+    setTimeout(function() {
+      hideLoadingSpinner();
+    }, 100);
   };
   img.onerror = function() {
     hideLoadingSpinner();
