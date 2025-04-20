@@ -3,20 +3,46 @@ var currentImage = 0;
 
 // Function to navigate to the next image
 function nextImage() {
+  showLoadingSpinner();
   currentImage++;
   if (currentImage >= images.length) {
     currentImage = 0;
   }
-  $('.myImages').attr('src', images[currentImage]);
+  loadImage(images[currentImage]);
 }
 
 // Function to navigate to the previous image
 function prevImage() {
+  showLoadingSpinner();
   currentImage--;
   if (currentImage < 0) {
     currentImage = images.length - 1;
   }
-  $('.myImages').attr('src', images[currentImage]);
+  loadImage(images[currentImage]);
+}
+
+// Function to show loading spinner
+function showLoadingSpinner() {
+  $('.loading-spinner').show();
+}
+
+// Function to hide loading spinner
+function hideLoadingSpinner() {
+  $('.loading-spinner').hide();
+}
+
+// Function to load image with spinner
+function loadImage(src) {
+  const img = new Image();
+  img.onload = function() {
+    $('.myImages').attr('src', src);
+    hideLoadingSpinner();
+  };
+  img.onerror = function() {
+    hideLoadingSpinner();
+    console.error('Failed to load image:', src);
+  };
+  img.src = src;
 }
 
 // Keyboard navigation
@@ -38,4 +64,8 @@ $(document).ready(function() {
   $('#prev-btn').click(function() {
     prevImage();
   });
+
+  // Hide spinner initially and load first image
+  hideLoadingSpinner();
+  $('.myImages').on('load', hideLoadingSpinner);
 });
