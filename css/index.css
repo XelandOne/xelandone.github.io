@@ -10,13 +10,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh
+    min-height: 100vh;
 }
 
 body::-webkit-scrollbar {
     display: none;
 }
-
 
 /* Captcha */
 
@@ -66,8 +65,6 @@ button {
     user-select: none;
     -webkit-user-select: none;
 }
-
-
 
 /* Website */
 
@@ -125,4 +122,9 @@ button {
 #headline-litkreis {
     top: 87%;
     left: 72%;
+}
+
+#headline-startup {
+    top: 63%;
+    left: 18%;
 }
